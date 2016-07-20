@@ -12,11 +12,12 @@ apt-get install -y git  && apt-get install -y supervisor
 
 ADD apachesupervisor.conf /etc/supervisor/conf.d/apachesupervisor.conf
 
-# Download Wordpress from git into /app
+# Download Wordpress from git into /opt
 RUN  git clone  https://github.com/pramod08/Wordpress.git  /opt
 
 # Configure Wordpress to connect to local DB
 ADD wp-config.php /opt/wp-config.php
+# Configure the apache PHP
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
 
 # Modify permissions to allow plugin upload
