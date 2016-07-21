@@ -5,7 +5,7 @@ MAINTAINER Bizruntime@pramod
 
 # Install plugins
 RUN apt-get -y update && apt-get -y upgrade && apt-get install -y wget curl python  && \
-apt-get install -y nano unzip wget php5 libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-intl php-pear && \
+apt-get install -y nano php5 libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-intl php-pear && \
 apt-get -y install php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-sqlite && \
 apt-get install -y php5-tidy php5-xmlrpc php5-xsl && \
 apt-get install -y git  && apt-get install -y supervisor
