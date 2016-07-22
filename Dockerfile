@@ -19,13 +19,14 @@ RUN  git clone  https://github.com/pramod08/Wordpress.git  /opt
 ADD wp-config.php /opt/wp-config.php
 # Configure the apache PHP
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
+RUN mkdir -p /var/www/html/wp-content/uploads
 
 # Modify permissions to allow plugin upload
 RUN cp -R /opt/* /var/www/html/
-RUN chown -R www-data:www-data  /var/www/html
+RUN chown -R www-data:www-data  /var/www/html /var/www/html/wp-content/uploads
 
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
 
-EXPOSE 80 3306
+EXPOSE 90 3306
 CMD ["/run.sh"]
